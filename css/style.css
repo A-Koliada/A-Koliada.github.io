@@ -50,7 +50,13 @@ body {
 	width: device-width;
 }
 /* ---------Page preload--------------------------------------*/
+.rotating-logo {
+    transition: transform 0.5s ease;
+  }
 
+  .rotating-logo:hover {
+    transform: rotate(360deg);
+  }
 .loader-wrap {
 	position: fixed;
 	width: 100%;
