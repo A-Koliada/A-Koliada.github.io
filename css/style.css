@@ -1674,6 +1674,148 @@ nav.nav-inner {
 	letter-spacing: 2px;
 	font-size: 10px;
 }
+/*==================================================================*/
+/* Контейнер для зображень */
+.custom-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 50px; /* Відстань між зображеннями, змініть тут для налаштування */
+}
+
+/* Контейнер для зображення */
+.custom-image-container .image-wrapper {
+    position: relative;
+    width: 600px;
+    max-width: 600px;
+    aspect-ratio: 2/1;
+    background-color: transparent;
+}
+
+/* Ліве вирівнювання для першого зображення */
+.custom-image-container .left-aligned {
+    margin-right: auto;
+}
+
+/* Праве вирівнювання для другого зображення */
+.custom-image-container .right-aligned {
+    margin-left: auto;
+}
+
+/* Шар для фону */
+.custom-image-container .image-wrapper .background-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    z-index: 0;
+    border-radius: 28px;
+}
+
+/* Зображення */
+.custom-image-container .image-wrapper .styled-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 28px;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+/* Ховаємо ховер-зображення за замовчуванням */
+.custom-image-container .image-wrapper .hover-image {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* SVG-смуга */
+.custom-image-container .image-wrapper .border-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+/* Статичний контур (без наведення) */
+.custom-image-container .image-wrapper .static-border {
+    fill: none;
+    stroke: #4A4A4E;
+    stroke-width: 3;
+    transition: stroke-opacity 0.3s ease;
+}
+
+/* Анімаційна смуга */
+.custom-image-container .image-wrapper .snake-line {
+    fill: none;
+    stroke: #29BB74;
+    stroke-width: 6; /* Товщина лінії, змініть тут (наприклад, 5 для товщої, 2 для тоншої) */
+    stroke-dasharray: 2064 1376; /* 60% (2064) — видима, 40% (1376) — порожня */
+    stroke-dashoffset: 0;
+}
+
+/* Анімація безперервного руху по колу */
+@keyframes continuousDash {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: -3440;
+    }
+}
+
+/* Ефект при наведенні */
+.custom-image-container .image-wrapper:hover .background-layer {
+    background-color: #2A2A2E;
+}
+
+.custom-image-container .image-wrapper:hover .styled-image:not(.hover-image) {
+    opacity: 0;
+}
+
+.custom-image-container .image-wrapper:hover .hover-image {
+    opacity: 1;
+}
+
+.custom-image-container .image-wrapper:hover .snake-line {
+    animation: continuousDash 6s linear infinite; /* Швидкість руху, змініть 4s (наприклад, 3s — швидше, 6s — повільніше) */
+}
+
+.custom-image-container .image-wrapper:hover .static-border {
+    stroke-opacity: 0;
+}
+
+/* Адаптація для менших екранів */
+@media (max-width: 768px) {
+    .custom-image-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .custom-image-container .image-wrapper {
+        width: 70%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-image-container .image-wrapper {
+        width: 90%;
+        max-width: 300px;
+    }
+}
+/*-------------------------------------------------------------------*/
+
+
 /*------section ------------------------------------------------*/
 section {
 	position: relative;
