@@ -1675,13 +1675,38 @@ nav.nav-inner {
 	font-size: 10px;
 }
 /*==================================================================*/
+/* Стилі для меню */
+.scroll-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.scroll-nav ul li {
+    display: inline-block;
+}
+
+.scroll-nav ul li a {
+    text-decoration: none;
+    color: #fff; /* Колір тексту за замовчуванням */
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.scroll-nav ul li a.active {
+    color: #29BB74; /* Колір для активного пункту (підсвічування) */
+    font-weight: bold; /* Додатковий стиль для активного пункту */
+}
+
 /* Контейнер для зображень */
 .custom-image-container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap: 50px; /* Відстань між зображеннями, змініть тут для налаштування */
+    gap: 50px;
 }
 
 /* Контейнер для зображення */
@@ -1698,7 +1723,7 @@ nav.nav-inner {
     display: block;
     width: 100%;
     height: 100%;
-    text-decoration: none; /* Прибираємо підкреслення */
+    text-decoration: none;
 }
 
 /* Ліве вирівнювання для першого зображення */
@@ -1765,8 +1790,8 @@ nav.nav-inner {
 .custom-image-container .image-wrapper .snake-line {
     fill: none;
     stroke: #29BB74;
-    stroke-width: 5; /* Товщина лінії, змініть тут (наприклад, 5 для товщої, 2 для тоншої) */
-    stroke-dasharray: 2064 1376; /* 60% (2064) — видима, 40% (1376) — порожня */
+    stroke-width: 5;
+    stroke-dasharray: 2064 1376;
     stroke-dashoffset: 0;
 }
 
@@ -1794,7 +1819,7 @@ nav.nav-inner {
 }
 
 .custom-image-container .image-wrapper:hover .snake-line {
-    animation: continuousDash 6s linear infinite; /* Швидкість руху, змініть 4s (наприклад, 3s — швидше, 6s — повільніше) */
+    animation: continuousDash 4s linear infinite;
 }
 
 .custom-image-container .image-wrapper:hover .static-border {
@@ -1822,6 +1847,105 @@ nav.nav-inner {
     }
 }
 /*-------------------------------------------------------------------*/
+/* Projects Section Styles */
+#projects {
+    background: #2A2A2E;
+    padding: 110px 0;
+}
+
+.projects-row {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-item {
+    position: relative;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.project-item .image-wrapper-link {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%; /* Квадратні зображення */
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.project-item .styled-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.project-item .hover-image {
+    opacity: 0;
+}
+
+.project-item .image-wrapper-link:hover .hover-image {
+    opacity: 1;
+}
+
+.project-item .image-wrapper-link:hover .styled-image:not(.hover-image) {
+    opacity: 0;
+}
+
+.project-item .border-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.project-item .snake-line {
+    fill: none;
+    stroke: #29bb74;
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-dasharray: 390 910;
+    stroke-dashoffset: 0;
+    opacity: 0;
+    filter: drop-shadow(0 0 10px #29bb74);
+    transition: opacity 0.3s ease;
+}
+
+.project-item .image-wrapper-link:hover .snake-line {
+    opacity: 1;
+    animation: dash 2.5s linear infinite;
+}
+
+/* Адаптація для планшетів */
+@media (max-width: 768px) {
+    .project-item {
+        padding: 10px;
+    }
+    .project-item .snake-line {
+        stroke-width: 5;
+    }
+}
+
+/* Адаптація для телефонів */
+@media (max-width: 480px) {
+    .project-item {
+        padding: 5px;
+    }
+    .project-item .snake-line {
+        stroke-width: 4;
+    }
+    .projects-row .col-sm-6 {
+        width: 50%;
+    }
+}
 
 
 /*------section ------------------------------------------------*/
