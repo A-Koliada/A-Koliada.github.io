@@ -1846,7 +1846,83 @@ nav.nav-inner {
         max-width: 300px;
     }
 }
-/*-------------------------------------------------------------------*/
+/* projects 2 start -------------------------------------------------------------------*/
+
+/* Projects Section Styles */
+.projects-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.project-col {
+    flex: 0 0 20%; /* 5 columns - розмір колонки */
+    max-width: 20%; /* 5 columns - максимальна ширина */
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+/* Зменшення розміру картинок на 15% - щоб зменшити більше/менше, змініть значення transform */
+.project-item {
+    transform: scale(0.80); /*85 Зменшення на 15% */
+    transition: all 0.3s ease;
+    margin-top: 20px; /*15 Компенсація для зменшеного розміру */
+}
+
+/* Анімації при наведенні збережені */
+.project-item:hover .hover-image {
+    opacity: 1;
+}
+.project-item:hover .styled-image:not(.hover-image) {
+    opacity: 0;
+}
+.project-item:hover .snake-line {
+    opacity: 1;
+    animation: dash 2s linear infinite;
+}
+
+/* Адаптація для планшетів - 3 проекти в ряд */
+@media (max-width: 992px) {
+    .project-col {
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
+    }
+}
+
+/* Адаптація для телефонів - 2 проекти в ряд */
+@media (max-width: 768px) {
+    .project-col {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    
+    /* Зменшення ефекту масштабування для маленьких екранів */
+    .project-item {
+        transform: scale(0.95);
+    }
+}
+
+/* Для дуже маленьких екранів - 1 проект в ряд */
+@media (max-width: 480px) {
+    .project-col {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .project-item {
+        transform: scale(1);
+    }
+}
+
+/* Збереження анімації */
+@keyframes dash {
+    to { stroke-dashoffset: -1300; }
+}
+
+
+/*projects 2 end ==================================================================*/
 /* Projects Section Styles */
 #projects {
     background: #2A2A2E;
