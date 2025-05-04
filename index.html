@@ -14,6 +14,12 @@
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <link type="text/css" rel="stylesheet" href="css/color.css">
     <!--=============== favicons ===============-->
+    <!-- Підключення jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Підключення Slick Slider -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
     <link rel="shortcut icon" href="images/favicon.ico">
     <!-- Inline styles for image hover and snake animation -->
     <style>
@@ -426,7 +432,7 @@
             </div>
         </div>
 <!-- Кінець секції Services -->
-
+<!-- ======================================================================= -->
 <!-- Секція Projects -->
 <section data-scrollax-parent="true" id="projects">
     <div class="section-subtitle" data-scrollax="properties: { translateY: '-250px' }"><span>//</span>Projects</div>
@@ -435,22 +441,24 @@
             <h3>My Works</h3>
             <h2>Featured <span>Projects</span></h2>
             <p>Here are some of my recent projects with interactive hover effects.</p>
+            <div class="ci-num"><span>03. - </span></div>
         </div>
         
-        <!-- Перший рядок з 4 зображеннями -->
+        <!-- Рядок 1: 5 проектів -->
         <div class="row projects-row">
-            <div class="col-md-3 col-sm-6">
+            <div class="project-col">
                 <div class="project-item">
                     <a href="project_bank.html" target="_blank" class="image-wrapper-link">
-                        <img src="images/icon/p1.png" alt="Project 1" class="styled-image">
-                        <img src="images/icon/p1d.png" alt="Project 1 Hover" class="styled-image hover-image">
+                        <img src="images/icon/pr1h.png" alt="Project 1" class="styled-image">
+                        <img src="images/icon/pr2h.png" alt="Project 1 Hover" class="styled-image hover-image">
                         <svg class="border-svg" viewBox="0 0 600 600" preserveAspectRatio="none">
                             <rect class="snake-line" x="20" y="20" width="560" height="560" rx="40" ry="40" />
                         </svg>
                     </a>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            
+            <div class="project-col">
                 <div class="project-item">
                     <a href="project_hcs_management.html" target="_blank" class="image-wrapper-link">
                         <img src="images/icon/p2.png" alt="Project 2" class="styled-image">
@@ -461,7 +469,8 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            
+            <div class="project-col">
                 <div class="project-item">
                     <a href="project_store.html" target="_blank" class="image-wrapper-link">
                         <img src="images/icon/p3.png" alt="Project 3" class="styled-image">
@@ -472,7 +481,8 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            
+            <div class="project-col">
                 <div class="project-item">
                     <a href="project_bakery.html" target="_blank" class="image-wrapper-link">
                         <img src="images/icon/p4.png" alt="Project 4" class="styled-image">
@@ -483,11 +493,8 @@
                     </a>
                 </div>
             </div>
-        </div>
-        
-        <!-- Другий рядок з 4 зображеннями -->
-        <div class="row projects-row">
-            <div class="col-md-3 col-sm-6">
+            
+            <div class="project-col">
                 <div class="project-item">
                     <a href="project_school.html" target="_blank" class="image-wrapper-link">
                         <img src="images/icon/p5.png" alt="Project 5" class="styled-image">
@@ -498,7 +505,11 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+        </div>
+        
+        <!-- Рядок 2: 5 проектів -->
+        <div class="row projects-row">
+            <div class="project-col">
                 <div class="project-item">
                     <a href="project_cps.html" target="_blank" class="image-wrapper-link">
                         <img src="images/icon/p6.png" alt="Project 6" class="styled-image">
@@ -509,7 +520,8 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            
+            <div class="project-col">
                 <div class="project-item">
                     <a href="project_cars.html" target="_blank" class="image-wrapper-link">
                         <img src="images/icon/p7.png" alt="Project 7" class="styled-image">
@@ -520,7 +532,8 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            
+            <div class="project-col">
                 <div class="project-item">
                     <a href="project_medical.html" target="_blank" class="image-wrapper-link">
                         <img src="images/icon/p8.png" alt="Project 8" class="styled-image">
@@ -531,13 +544,10 @@
                     </a>
                 </div>
             </div>
-        </div>
-        
-        <!-- Третій рядок з 2 зображеннями -->
-        <div class="row projects-row">
-            <div class="col-md-6 col-sm-6">
+            
+            <div class="project-col">
                 <div class="project-item">
-                    <a href="project_agrarian.html" target="_blank" class="image-wrapper-link">
+                    <a href="project_school.html" target="_blank" class="image-wrapper-link">
                         <img src="images/icon/p9.png" alt="Project 9" class="styled-image">
                         <img src="images/icon/p9d.png" alt="Project 9 Hover" class="styled-image hover-image">
                         <svg class="border-svg" viewBox="0 0 600 600" preserveAspectRatio="none">
@@ -546,9 +556,10 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-6">
+            
+            <div class="project-col">
                 <div class="project-item">
-                    <a href="project_real_estate.html" target="_blank" class="image-wrapper-link">
+                    <a href="project_cps.html" target="_blank" class="image-wrapper-link">
                         <img src="images/icon/p10.png" alt="Project 10" class="styled-image">
                         <img src="images/icon/p10d.png" alt="Project 10 Hover" class="styled-image hover-image">
                         <svg class="border-svg" viewBox="0 0 600 600" preserveAspectRatio="none">
@@ -563,6 +574,121 @@
 </section>
 <!-- Кінець секції Projects -->
 <!-- ====================================================================================-->    
+<!-- початок секції Portfolio -->
+
+<section data-scrollax-parent="true" id="portfolio">
+    <div class="section-subtitle" data-scrollax="properties: { translateY: '-250px' }"><span>//</span>Portfolio</div>
+    <div class="container">
+        <div class="section-title fl-wrap">
+            <h3>My Works</h3>
+            <h2>Featured <span>Portfolio</span></h2>
+            <p>Here are some of my recent projects with interactive hover effects.</p>
+            <div class="ci-num"><span>04. - </span></div>
+        </div>
+    
+
+<!--section -->
+<!--
+<section class="dark-bg" id="sec5">
+-->
+    <div class="fet_pr-carousel-title">
+        <div class="fet_pr-carousel-title-item">
+            <h3>My Featured Projects</h3>
+            <p>In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida.</p>
+            <a href="portfolio.html" class="btn float-btn flat-btn color-btn mar-top">My Portfolio</a>
+        </div>
+    </div>
+    <!--slider-carousel-wrap -->
+    <div class="slider-carousel-wrap fl-wrap">
+        <!--fet_pr-carousel -->
+        <div class="fet_pr-carousel cur_carousel-slider-container fl-wrap">
+            <!--slick-item -->
+            <div class="slick-item">
+                <div class="fet_pr-carousel-box">
+                    <div class="fet_pr-carousel-box-media fl-wrap">
+                        <img src="images/folio/web/slider/3.jpg" class="respimg" alt="">
+                        <a href="images/folio/web/slider/3.jpg" class="fet_pr-carousel-box-media-zoom image-popup"><i class="fal fa-search"></i></a>
+                    </div>
+                    <div class="fet_pr-carousel-box-text fl-wrap">
+                        <h3><a href="portfolio-single.html">Lokomotive Project</a></h3>
+                        <div class="fet_pr-carousel-cat"><a href="#">Branding</a> <a href="#">Web Design</a></div>
+                    </div>
+                </div>
+            </div>
+            <!--slick-item end -->
+            <!--slick-item -->
+            <div class="slick-item">
+                <div class="fet_pr-carousel-box">
+                    <div class="fet_pr-carousel-box-media fl-wrap">
+                        <img src="images/folio/web/slider/4.jpg" class="respimg" alt="">
+                        <a href="https://vimeo.com/183619886" class="fet_pr-carousel-box-media-zoom image-popup"><i class="fal fa-play"></i></a>
+                    </div>
+                    <div class="fet_pr-carousel-box-text fl-wrap">
+                        <h3><a href="portfolio-single.html">Architecture Agency</a></h3>
+                        <div class="fet_pr-carousel-cat"><a href="#">Photography</a> <a href="#">Web Design</a></div>
+                    </div>
+                </div>
+            </div>
+            <!--slick-item end -->
+            <!--slick-item -->
+            <div class="slick-item">
+                <div class="fet_pr-carousel-box">
+                    <div class="fet_pr-carousel-box-media fl-wrap">
+                        <img src="images/folio/web/slider/1.jpg" class="respimg" alt="">
+                        <a href="images/folio/web/slider/1.jpg" class="fet_pr-carousel-box-media-zoom image-popup"><i class="fal fa-search"></i></a>
+                    </div>
+                    <div class="fet_pr-carousel-box-text fl-wrap">
+                        <h3><a href="portfolio-single.html">Corporate website</a></h3>
+                        <div class="fet_pr-carousel-cat"><a href="#">Branding</a> <a href="#">Web</a></div>
+                    </div>
+                </div>
+            </div>
+            <!--slick-item end -->
+            <!--slick-item -->
+            <div class="slick-item">
+                <div class="fet_pr-carousel-box">
+                    <div class="fet_pr-carousel-box-media fl-wrap">
+                        <img src="images/folio/web/slider/2.jpg" class="respimg" alt="">
+                        <a href="images/folio/web/slider/2.jpg" class="fet_pr-carousel-box-media-zoom image-popup"><i class="fal fa-search"></i></a>
+                    </div>
+                    <div class="fet_pr-carousel-box-text fl-wrap">
+                        <h3><a href="portfolio-single.html">Mobile ui Interface</a></h3>
+                        <div class="fet_pr-carousel-cat"><a href="#">UI/UX</a> <a href="#">Web Design</a></div>
+                    </div>
+                </div>
+            </div>
+            <!--slick-item end -->
+            <!--slick-item -->
+            <div class="slick-item">
+                <div class="fet_pr-carousel-box">
+                    <div class="fet_pr-carousel-box-media fl-wrap">
+                        <img src="images/folio/web/slider/5.jpg" class="respimg" alt="">
+                        <a href="images/folio/web/slider/5.jpg" class="fet_pr-carousel-box-media-zoom image-popup"><i class="fal fa-search"></i></a>
+                    </div>
+                    <div class="fet_pr-carousel-box-text fl-wrap">
+                        <h3><a href="portfolio-single.html">Fashion Agency</a></h3>
+                        <div class="fet_pr-carousel-cat"><a href="#">Development</a> <a href="#">Web Design</a></div>
+                    </div>
+                </div>
+            </div>
+            <!--slick-item end -->
+        </div>
+        <!--fet_pr-carousel end -->
+        <div class="sp-cont sp-arr sp-cont-prev"><i class="fal fa-long-arrow-left"></i></div>
+        <div class="sp-cont sp-arr sp-cont-next"><i class="fal fa-long-arrow-right"></i></div>
+    </div>
+    <!--slider-carousel-wrap end-->
+    <div class="fet_pr-carousel-counter"></div>
+</section>
+<!-- section end -->
+<!-- кінець секції Portfolio -->
+<!-- =============================================================================== -->
+
+
+
+
+
+
 
  <!-- ====================================================================================-->    
                 <!-- блоки які рухаються 
