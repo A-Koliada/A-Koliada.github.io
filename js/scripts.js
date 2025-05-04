@@ -823,3 +823,62 @@ $(function () {
     initparallax();
     initSolonick();
 });
+
+//===========
+// Плавне прокручування для посилань із класом scroll-link
+document.querySelectorAll('.scroll-link').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1); // Отримуємо ID без "#"
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+// Підсвічування активного пункту меню при прокручуванні
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section, div[id]');
+    const navLinks = document.querySelectorAll('.scroll-nav a.scroll-link');
+
+    let currentSection = '';
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const sectionHeight = section.offsetHeight;
+        if (sectionTop <= window.innerHeight / 2 && sectionTop + sectionHeight > window.innerHeight / 2) {
+            currentSection = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSection}`) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Ініціалізація слайдера з автопрокруткою
+$(document).ready(function(){
+    $('.fet_pr-carousel').slick({
+        centerMode: true,
+        centerPadding: '0',
+        slidesToShow: 3,
+        autoplay: true,
+        autoplaySpeed: 2000, // Час автопрокрутки в мілісекундах (2000 = 2 секунди)
+        arrows: true,
+        prevArrow: $('.sp-cont-prev'),
+        nextArrow: $('.sp-cont-next'),
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: true,
+                    centerMode: true,
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+});
